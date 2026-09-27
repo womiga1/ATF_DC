@@ -1,0 +1,11 @@
+pandas
+tqdm
+matplotlib
+dgl
+numpy
+SciencePlots
+scikit-learn
+xlrd==1.2.0
+einops
+PyWavelets
+# mamba-ssm  # 需要Python 3.9+，当前环境Python 3.7不支持

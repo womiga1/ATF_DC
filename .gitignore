@@ -1,0 +1,73 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+pip-wheel-metadata/
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+.conda/
+conda-env.yaml
+
+# PyTorch / Model Checkpoints
+checkpoints/
+*.ckpt
+*.pt
+*.pth
+
+# Data (raw & processed)
+data/
+processed/
+dataset/
+
+# Results
+results/
+results_old/
+*.pkl
+!*.pyc
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large text files
+lou.txt
+bulou.txt
+
+# Old main
+main_old.py
+
+# Docs (optional to exclude)
+CONSISTENCY_LOSS_INTEGRATION.md
+
+# SSH Deploy Key (NEVER commit private key)
+github_deploy_key
+*.pub

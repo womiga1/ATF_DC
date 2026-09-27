@@ -1,0 +1,36 @@
+# ATF-UAD
+This repository supplements our paper "An Adversarial Time-Frequency Reconstruction Network for Unsupervised Anomaly Detection"
+
+Published in Neural Networks 2023
+
+## Installation
+This code needs Python-3.7 and pytorch 1.8.1 or higher.
+```bash
+pip3 install -r requirements.txt
+```
+
+## Dataset Preprocessing
+We have preprocessed all datasets and the link of them is shown as following, meanwhile we offer the checkpoints of all dataset to help you reproduce the results.
+```bash
+https://drive.google.com/file/d/1C3H9M0NdR3DViljjPzK889n6_FEHb4qr/view?usp=share_link
+https://drive.google.com/file/d/19jNOoMbLSzAJjbUBrCE6V39oUFep0mkL/view?usp=share_link
+```
+After download the zip files, extract them to the corresponding folders.
+
+## Result Reproduction
+To run a model on a dataset, run the following command:
+```bash
+python3 main.py --model <model> --dataset <dataset> --<process>
+```
+where `<model>` can be 'ATF_UAD' or other baselines. `<dataset>` can be one of 'SMAP', 'PSM', 'SWaT', 'WADI', 'SMD', 'MSDS', 'MBA', 'UCR' and 'NAB. `<process>` can be 'test' to reproduce the result based on the checkpoints and 'retrain' to retrain the models. For example:
+```bash
+python3 main.py --model ATF_UAD --dataset NAB --test
+CUDA_VISIBLE_DEVICES=0 python main.py --model ATF_UAD --dataset UCR --test
+python visualize_results.py --data_file results/SelfBuilt_ATF_UAD_plot_data.pkl --output_dir plots 
+CUDA_VISIBLE_DEVICES=4 python main.py --model DC_UAD --dataset SMD --test
+CUDA_VISIBLE_DEVICES=4 python main.py --model DC_UAD --dataset MSL --test
+CUDA_VISIBLE_DEVICES=4 python main.py --model DC_UAD --dataset SMAP --test
+CUDA_VISIBLE_DEVICES=4 python main.py --model DC_UAD --dataset SWaT --test
+CUDA_VISIBLE_DEVICES=4 python main.py --model DC_UAD --dataset PSM --test
+CUDA_VISIBLE_DEVICES=4 python main.py --model DC_UAD --dataset SelfBuilt --test
+```
